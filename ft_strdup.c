@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/17 22:14:46 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/21 17:41:56 by kursula          ###   ########.fr       */
+/*   Created: 2021/04/20 20:45:02 by kursula           #+#    #+#             */
+/*   Updated: 2021/04/21 19:02:26 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int	ft_strlcat(char *buf, const char *a, int n)
+char	*strdup(const char *s)
 {
-	int	i;
-	int	j;
+	int		i;
+	char	*s1;
 
-	j = 0;
-	i = 0;
-	while (buf[i] != '\0')
-		i++;
-	while (i < n - 1)
-	{
-		buf[i] = a[j];
-		i++;
-		j++;
-	}
-	buf[i] = '\0';
-	while (a[j] != '\0')
-		j++;
-	return ((i + j) - 1);
+	s1 = (char *)malloc(ft_strlen(s) + 1);
+	if (s1 == 0)
+		return (0);
+	i = -1;
+	while (s[++i] != '\0')
+		s1[i] = s[i];
+	return (s1);
 }

@@ -6,22 +6,22 @@
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 16:50:08 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/17 16:57:25 by kursula          ###   ########.fr       */
+/*   Updated: 2021/04/21 18:51:26 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strncmp(char *a, char *b, int n)
+#include <stdlib.h>
+
+int	ft_strncmp(char *a, char *b, int n)
 {
-	int i;
+	int	i;
+
 	i = 0;
-	while (a[i] == b[i])
-	{
-		i++;
-	}
+	while (a[i] == b[i] && i < n)
+ 		i++;
 	if (a[i] > b[i])
 		return (1);
 	else if (a[i] < b[i])
-		return (-1);
-	else
-		return (0);
+		return (-1);	
+	return (0);
 }

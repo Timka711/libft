@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/17 22:14:46 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/21 17:41:56 by kursula          ###   ########.fr       */
+/*   Created: 2021/04/19 20:31:05 by kursula           #+#    #+#             */
+/*   Updated: 2021/04/21 18:53:53 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlcat(char *buf, const char *a, int n)
+void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 {
-	int	i;
-	int	j;
+	size_t	i;
 
-	j = 0;
 	i = 0;
-	while (buf[i] != '\0')
-		i++;
-	while (i < n - 1)
+	while (i < n)
 	{
-		buf[i] = a[j];
+		((char *)s1)[i] = ((char *)s2)[i];
 		i++;
-		j++;
+		if (((char *)s2)[i - 1] == c)
+			return (s1);
 	}
-	buf[i] = '\0';
-	while (a[j] != '\0')
-		j++;
-	return ((i + j) - 1);
+	return (0);
 }

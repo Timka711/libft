@@ -6,14 +6,17 @@
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 19:31:54 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/17 19:32:00 by kursula          ###   ########.fr       */
+/*   Updated: 2021/04/21 17:42:49 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char* ft_strrchr(char *a, int n)
+#include <stdlib.h>
+
+char	*ft_strrchr(char *a, int n)
 {
-	int i;
-	int res;
+	int	i;
+	int	res;
+
 	res = -1;
 	i = 0;
 	while (a[i] != '\0')

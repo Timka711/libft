@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/17 22:14:46 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/21 17:41:56 by kursula          ###   ########.fr       */
+/*   Created: 2021/04/20 15:39:58 by kursula           #+#    #+#             */
+/*   Updated: 2021/04/21 17:38:58 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int	ft_strlcat(char *buf, const char *a, int n)
+void	*ft_calloc(size_t s, size_t size)
 {
-	int	i;
-	int	j;
+	void	*arr;
 
-	j = 0;
-	i = 0;
-	while (buf[i] != '\0')
-		i++;
-	while (i < n - 1)
-	{
-		buf[i] = a[j];
-		i++;
-		j++;
-	}
-	buf[i] = '\0';
-	while (a[j] != '\0')
-		j++;
-	return ((i + j) - 1);
+	arr = malloc(s * size);
+	if (arr == 0)
+		return (0);
+	ft_bzero(arr, s * size);
+	return (arr);
 }

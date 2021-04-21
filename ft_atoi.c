@@ -6,8 +6,34 @@
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 16:49:02 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/17 16:49:50 by kursula          ###   ########.fr       */
+/*   Updated: 2021/04/21 17:38:27 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+int	ft_atoi(const char *s)
+{
+	int	i;
+	int	res;
+	int	z;
+
+	i = 0;
+	res = 0;
+	z = 0;
+	while ((s[i] >= 9 && s[i] <= 13) || s[i] == 32)
+		i++;
+	if (s[i] == '+' || s[i] == '-')
+	{
+		z = s[i] % 45 == 0;
+		i++;
+	}
+	while (s[i] >= 48 && s[i] <= 57)
+	{
+		res = (res * 10) + (s[i] - 48);
+		i++;
+	}
+	if (z)
+		return (res * -1);
+	return (res);
+}

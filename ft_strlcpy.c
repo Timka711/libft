@@ -6,20 +6,20 @@
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 21:36:48 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/17 21:37:14 by kursula          ###   ########.fr       */
+/*   Updated: 2021/04/21 17:42:08 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t ft_strlcpy(char *buf, const char *a, int n)
+#include <stdlib.h>
+
+size_t	ft_strlcpy(char *buf, const char *a, size_t n)
 {
-	int i;
-	i = 0;
+	size_t	i;
+
+	i = -1;
 	while (a[i] != '\0')
-	{
 		if (i < n - 1)
 			buf[i] = a[i];
-		i++;
-	}
 	buf[n - 1] = '\0';
 	return (i);
 }

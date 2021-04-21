@@ -6,11 +6,13 @@
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 12:38:56 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/17 19:28:23 by kursula          ###   ########.fr       */
+/*   Updated: 2021/04/21 17:39:10 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int a)
+#include <stdlib.h>
+
+int	ft_isalpha(int a)
 {
 	if ((a >= 97 && a <= 122) || \
 			(a >= 65 && a <= 90))

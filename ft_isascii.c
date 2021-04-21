@@ -6,14 +6,15 @@
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:17:48 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/16 14:19:40 by kursula          ###   ########.fr       */
+/*   Updated: 2021/04/21 17:39:29 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int a)
+#include <stdlib.h>
+
+int	ft_isascii(int a)
 {
 	if (a >= 0 && a <= 127)
 		return (1);
 	return (0);
 }
-

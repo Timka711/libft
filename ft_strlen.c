@@ -6,18 +6,18 @@
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:03:57 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/16 14:10:49 by kursula          ###   ########.fr       */
+/*   Updated: 2021/04/21 19:02:56 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen (char *a)
-{
-	int i;
-	i = 0;
+#include <stdlib.h>
 
+int	ft_strlen (const char *a)
+{
+	int	i;
+
+	i = 0;
 	while (a[i] != '\0')
-	{
 		i++;
-	}
 	return (0);
 }

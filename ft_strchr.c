@@ -6,13 +6,16 @@
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 19:40:27 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/17 19:51:58 by kursula          ###   ########.fr       */
+/*   Updated: 2021/04/21 17:41:33 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char* ft_strchr(char *a, int n)
+#include <stdlib.h>
+
+char	*ft_strchr(char *a, int n)
 {
-	int i;
+	int	i;
+
 	i = 0;
 	while (a[i] != '\0')
 	{

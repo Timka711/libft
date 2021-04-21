@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/17 22:14:46 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/21 17:41:56 by kursula          ###   ########.fr       */
+/*   Created: 2021/04/20 14:31:58 by kursula           #+#    #+#             */
+/*   Updated: 2021/04/21 17:41:23 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlcat(char *buf, const char *a, int n)
+void	ft_memset(void *s1, int c, size_t n)
 {
-	int	i;
-	int	j;
+	size_t	i;
 
-	j = 0;
-	i = 0;
-	while (buf[i] != '\0')
-		i++;
-	while (i < n - 1)
-	{
-		buf[i] = a[j];
-		i++;
-		j++;
-	}
-	buf[i] = '\0';
-	while (a[j] != '\0')
-		j++;
-	return ((i + j) - 1);
+	i = -1;
+	while (++i < n)
+		((char *)s1)[i] = c;
 }

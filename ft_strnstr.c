@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/17 22:14:46 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/21 17:41:56 by kursula          ###   ########.fr       */
+/*   Created: 2021/04/20 20:55:46 by kursula           #+#    #+#             */
+/*   Updated: 2021/04/21 19:07:17 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlcat(char *buf, const char *a, int n)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	int	i;
-	int	j;
+	size_t	i;
 
-	j = 0;
-	i = 0;
-	while (buf[i] != '\0')
-		i++;
-	while (i < n - 1)
-	{
-		buf[i] = a[j];
-		i++;
-		j++;
-	}
-	buf[i] = '\0';
-	while (a[j] != '\0')
-		j++;
-	return ((i + j) - 1);
+	i = -1;
+	if (s2 == 0 || s2[0] == '\0')
+		return ((char *)s1);
+	while (++i < n)
+		if (s1[i] == s2[i])
+			return ((char *)s1 + i);
+	return (0);
 }

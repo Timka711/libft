@@ -6,11 +6,13 @@
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 13:52:30 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/16 13:59:32 by kursula          ###   ########.fr       */
+/*   Updated: 2021/04/21 17:43:23 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper (int a)
+#include <stdlib.h>
+
+int	ft_toupper (int a)
 {
 	if (a >= 97 && a <= 122)
 		a = a - 32;
