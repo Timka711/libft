@@ -6,13 +6,13 @@
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 19:31:54 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/21 17:42:49 by kursula          ###   ########.fr       */
+/*   Updated: 2021/04/22 16:57:38 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strrchr(char *a, int n)
+char	*ft_strrchr(const char *a, int n)
 {
 	int	i;
 	int	res;
@@ -28,5 +28,5 @@ char	*ft_strrchr(char *a, int n)
 	if (res == -1)
 		return (0);
 	else
-		return (&a[res]);
+		return (&((char *)a)[res]);
 }

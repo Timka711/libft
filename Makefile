@@ -6,7 +6,7 @@
 #    By: kursula <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/21 17:32:50 by kursula           #+#    #+#              #
-#    Updated: 2021/04/21 19:17:09 by kursula          ###   ########.fr        #
+#    Updated: 2021/04/22 15:23:22 by kursula          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,14 +21,14 @@ OBJ = *.o
 all: libft.a
 
 libft.a : libft.h
-	gcc $(FLAGS) -c $(SRC)
-	ar rc libft.a $(OBJ)
+	gcc $(FLAGS) -I. -c $(SRC)
+	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
 
 clean:
 	rm $(OBJ)
 
-fclean: clean
-   rm $(NAME);	
+fclean:clean
 
-re: fclean
-	$(NAME)
+
+re: fclean all
