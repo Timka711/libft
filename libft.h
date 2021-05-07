@@ -6,7 +6,7 @@
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:32:00 by kursula           #+#    #+#             */
-/*   Updated: 2021/05/06 13:40:36 by kursula          ###   ########.fr       */
+/*   Updated: 2021/05/07 18:37:01 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,7 @@ int		ft_isascii(int a);
 int		ft_isprint(int a);
 int		ft_toupper (int a);
 int		ft_tolower (int a);
+char    *ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif
