@@ -6,7 +6,7 @@
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 19:08:57 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/22 19:38:08 by kursula          ###   ########.fr       */
+/*   Updated: 2021/05/07 16:41:56 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,13 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 {
 	size_t	i;
 
-	i = -1;
-	while (++i < n)
-		((char *)s1)[i] = ((char *)s2)[i];
-	return (s1);
+	i = n;
+	if (s1 > s2)
+	{
+		while (--n >= 0 && n <= i)
+			((char *)s1)[n] = ((char *)s2)[n];
+		return (s1);
+	}
+	else
+		return (ft_memcpy(s1, s2, n));
 }

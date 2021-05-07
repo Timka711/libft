@@ -6,7 +6,7 @@
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 19:40:27 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/22 16:55:14 by kursula          ###   ########.fr       */
+/*   Updated: 2021/05/07 16:45:20 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ char	*ft_strchr(const char *a, int n)
 			return (&((char *)a)[i]);
 		i++;
 	}
+	if (a[i] == n)
+		return (&((char *)a)[i]);
 	return (0);
 }

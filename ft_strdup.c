@@ -6,13 +6,13 @@
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 20:45:02 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/21 19:02:26 by kursula          ###   ########.fr       */
+/*   Updated: 2021/05/06 13:40:18 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	int		i;
 	char	*s1;
@@ -23,5 +23,6 @@ char	*strdup(const char *s)
 	i = -1;
 	while (s[++i] != '\0')
 		s1[i] = s[i];
+	s1[i] = '\0';
 	return (s1);
 }

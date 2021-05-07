@@ -6,7 +6,7 @@
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:32:00 by kursula           #+#    #+#             */
-/*   Updated: 2021/04/22 17:06:20 by kursula          ###   ########.fr       */
+/*   Updated: 2021/05/06 13:40:36 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memccpy(void *restrict s1, const void *restrict s2, int c, size_t n);
 void	*ft_memmove(void *s1, const void *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-char	*strdup(const char *s);
+char	*ft_strdup(const char *s);
 size_t	ft_strlcat(char *restrict buf, const char *restrict a, size_t n);
 size_t	ft_strlcpy(char *restrict buf, const char *restrict a, size_t n);
 char	*ft_strchr(const char *a, int n);
