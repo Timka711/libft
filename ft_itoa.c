@@ -13,7 +13,7 @@ int	arr_len(int n)
 	return (size);
 }
 
-int	ft_itoi(int s)
+int	ft_itoa(int s)
 {
 	int	i;
 	char	*res;
