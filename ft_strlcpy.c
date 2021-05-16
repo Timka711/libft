@@ -6,17 +6,21 @@
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 21:36:48 by kursula           #+#    #+#             */
-/*   Updated: 2021/05/07 18:08:35 by kursula          ###   ########.fr       */
+/*   Updated: 2021/05/16 22:07:58 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-size_t	ft_strlcpy(char *restrict buf, const char *restrict a, size_t n)
+size_t	ft_strlcpy(char *buf, const char *a, size_t n)
 {
 	size_t	i;
 
 	i = 0;
+	if (!buf)
+		return (0);
+	if (n > 0)
+		buf[i] = '\0';
 	while (a[i] != '\0')
 	{
 		if (i + 1 < n)
@@ -26,7 +30,5 @@ size_t	ft_strlcpy(char *restrict buf, const char *restrict a, size_t n)
 		}
 		i++;
 	}
-	if (i == 0)
-		buf[i] = '\0';
 	return (i);
 }

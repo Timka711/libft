@@ -6,7 +6,7 @@
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 18:24:03 by kursula           #+#    #+#             */
-/*   Updated: 2021/05/07 19:01:05 by kursula          ###   ########.fr       */
+/*   Updated: 2021/05/16 22:17:07 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,22 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*res;
 
 	j = 0;
+	if (!s1 || !s2)
+		return (0);
 	i = ft_strlen(s1) + ft_strlen(s2);
 	res = (char *)malloc(i + 1);
 	if (!res)
 		return (0);
 	res[i] = 0;
-	while (j < i)
+	while (*s1 != 0 && j < i)
 	{
-		if (*s1 != 0)
-		{
-			res[j] = *s1;
-			s1++;
-		}
-		else if (*s2 != 0)
-		{
-			res[j] = *s2;
-			s2++;
-		}
-		j++;
+		res[j++] = *s1;
+		s1++;
+	}
+	while (*s2 != 0 && j < i)
+	{
+		res[j++] = *s2;
+		s2++;
 	}
 	return (res);
 }

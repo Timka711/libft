@@ -10,20 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *a, int n)
 {
-	int	i;
+	int				i;
+	char			*b;
+	unsigned char	c;
 
+	c = (unsigned char)n;
+	b = (char *)a;
 	i = 0;
-	while (a[i] != '\0')
+	while (b[i] != '\0')
 	{
-		if (a[i] == n)
-			return (&((char *)a)[i]);
+		if (b[i] == c)
+			return (&b[i]);
 		i++;
 	}
-	if (a[i] == n)
-		return (&((char *)a)[i]);
+	if (b[i] == c)
+		return (&b[i]);
 	return (0);
 }

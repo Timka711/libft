@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *a, const char *b, size_t n)
 {
@@ -19,11 +19,8 @@ int	ft_strncmp(const char *a, const char *b, size_t n)
 	i = 0;
 	if (n == 0)
 		return (0);
-	while ((unsigned char)a[i] == (unsigned char)b[i] && i < n - 1)
+	while ((unsigned char)a[i] == (unsigned char)b[i] && i < n - 1 \
+	&& a[i] != 0 && b[i] != 0)
 		i++;
-	if ((unsigned char)a[i] > (unsigned char)b[i])
-		return (1);
-	else if ((unsigned char)a[i] < (unsigned char)b[i])
-		return (-1);
-	return (0);
+	return ((unsigned char)a[i] - (unsigned char)b[i]);
 }

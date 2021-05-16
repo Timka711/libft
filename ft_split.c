@@ -12,80 +12,75 @@
 
 #include "libft.h"
 
-char	**wordf(char const *s, char c)
+char	**array(char const *s, char c)
 {
-	char	**res;
-	int		word;
+	int		l;
 	int		i;
+	char	**res;
 
-	word = 0;
 	i = 0;
+	l = 0;
+	res = 0;
 	while (s[i] != 0)
 	{
-		if (s[i] == c && i != 0)
-			word++;
-		while (s[i] == c && i != 0)
+		while (s[i] == c)
 			i++;
-		if (s[i] == 0)
-			break ;
-		i++;
+		if (s[i] != c && s[i] != 0)
+		{
+			l++;
+			while (s[i] != c && s[i] != 0)
+				i++;
+		}
 	}
-	if (s[--i] != c)
-		word++;
-	res = (char **)malloc((word + 1) * sizeof(char *));
-	if (!res)
-		return (0);
-	res[word] = 0;
-	res[word - 1] = 0;
+	res = (char **)malloc(sizeof(char *) * (l + 1));
+	if (res)
+		res[l] = 0;
 	return (res);
 }
 
-void	letterf(char const *s, char c, char **res)
+int	free_if_needed(char **arr, int pos)
 {
-	int	word;
-	int	letter;
 	int	i;
 
-	letter = 0;
 	i = 0;
-	word = 0;
-	while (s[i] != 0)
+	if (!arr[pos])
 	{
-		letter++;
-		if (s[i] == c)
+		while (arr[i])
 		{
-			res[word] = (char *)malloc((letter + 1) * sizeof(char));
-			ft_memset(res[word], '\0', letter);
-			letter = 0;
-			word++;
+			free(arr[i]);
+			i++;
 		}
-		i++;
+		free(arr);
+		return (1);
 	}
-	if (s[--i] != c)
-		res[word] = (char *)malloc(letter + 1);
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
-	int		word;
-	int		letter;
+	int		f;
 	int		i;
+	int		w;
 
+	if (!s)
+		return (0);
 	i = 0;
-	word = 0;
-	res = wordf(s, c);
-	letterf(s, c, res);
+	w = 0;
+	res = array(s, c);
+	if (!res)
+		return (0);
 	while (s[i] != 0)
 	{
-		letter = 0;
+		while (s[i] == c)
+			i++;
+		f = i;
 		while (s[i] != c && s[i] != 0)
-			res[word][letter++] = s[i++];
-		if (letter != 0)
-			res[word++][letter] = 0;
-		if (s[i] == 0)
-			break ;
-		i++;
+			i++;
+		if (f < i)
+			res[w] = ft_substr(s, f, i - f);
+		if (f < i && free_if_needed(res, w++))
+			return (0);
 	}
 	return (res);
 }

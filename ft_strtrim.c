@@ -1,55 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kursula <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/15 13:18:45 by kursula           #+#    #+#             */
-/*   Updated: 2021/05/15 13:24:37 by kursula          ###   ########.fr       */
+/*   Created: 2021/05/08 13:58:02 by kursula           #+#    #+#             */
+/*   Updated: 2021/05/16 22:02:18 by kursula          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	arr_len(int n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	size;
+	size_t		len;
+	char		*n;
 
-	size = 1;
-	if (n < 0)
-		size++;
-	while (n / 10)
-	{
-		size++;
-		n = n / 10;
-	}
-	return (size);
-}
-
-char	*ft_itoa(int s)
-{
-	int		i;
-	char	*res;
-	int		z;
-
-	i = arr_len(s);
-	z = 1;
-	res = (char *)malloc(i + 1);
-	if (!res)
+	if (!s1 || !set)
 		return (0);
-	res[i--] = 0;
-	res[i] = '0';
-	if (s < 0)
-	{
-		res[0] = '-';
-		z = -1;
-	}
-	while (s)
-	{
-		res[i] = (s % 10) * z + '0';
-		s = s / 10;
-		i--;
-	}
-	return (res);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	len = ft_strlen(s1);
+	while (len && ft_strchr(set, s1[len]))
+		len--;
+	n = ft_substr((char *)s1, 0, len + 1);
+	return (n);
 }

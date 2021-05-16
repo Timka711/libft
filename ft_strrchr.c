@@ -10,22 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *a, int n)
 {
-	int	i;
-	int	res;
+	int				i;
+	int				res;
+	unsigned char	c;
 
+	c = (unsigned char)n;
 	res = -1;
 	i = 0;
 	while (a[i] != 0)
 	{
-		if (a[i] == n)
+		if (a[i] == c)
 			res = i;
 		i++;
 	}
-	if (a[i] == n)
+	if (a[i] == c)
 		return (&((char *)a)[i]);
 	if (res == -1)
 		return (0);
